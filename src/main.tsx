@@ -1,0 +1,485 @@
+import { StrictMode, useState } from "react";
+import ReactDOM from "react-dom/client";
+import {
+  ArrowRight,
+  BadgeCheck,
+  BrainCircuit,
+  Check,
+  Copy,
+  Database,
+  FileJson,
+  FolderKanban,
+  HelpCircle,
+  KeyRound,
+  Library,
+  Lock,
+  Search,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  Tags,
+  Users,
+  Workflow,
+  X,
+} from "lucide-react";
+import "./styles.css";
+
+const logoUrl = `${import.meta.env.BASE_URL}app-logo.svg`;
+const heroScreenshotUrl = `${import.meta.env.BASE_URL}hero-app-screenshot.png`;
+const preorderSubject = encodeURIComponent("Vorbestellung SMART PromptCreator");
+const preorderHref = `mailto:info@built-smart-hub.com?subject=${preorderSubject}`;
+
+const legalLinks = [
+  { label: "Impressum", href: "https://www.built-smart-hub.com/impressum" },
+  { label: "Datenschutz", href: "https://www.built-smart-hub.com/datenschutz" },
+  { label: "AGB", href: "https://www.built-smart-hub.com/agb" },
+  { label: "Widerrufsbelehrung", href: "https://www.built-smart-hub.com/widerrufsbelehrung" },
+];
+
+const features = [
+  {
+    icon: Library,
+    title: "Prompt-Bibliothek",
+    text: "Sammle wiederverwendbare Prompts mit Titel, Beschreibung, Tags und klarer Struktur.",
+  },
+  {
+    icon: Sparkles,
+    title: "Prompt-Optimierung",
+    text: "Verbessere Rohideen zu direkt nutzbaren Zielprompts mit einstellbarem Ziel, Stil und Format.",
+  },
+  {
+    icon: BrainCircuit,
+    title: "KI-Metadaten",
+    text: "Lass Titel, Kurzbeschreibung, Kategorie und passende Tags für neue Prompts vorbereiten.",
+  },
+  {
+    icon: FolderKanban,
+    title: "Tabs und Kategorien",
+    text: "Ordne deine Bibliothek nach Projekten, Einsatzbereichen oder persönlichen Arbeitsbereichen.",
+  },
+  {
+    icon: Search,
+    title: "Schnelle Suche",
+    text: "Finde Inhalte über Titel, Beschreibung, Prompt-Text, optimierte Ausgabe und Tags wieder.",
+  },
+  {
+    icon: Star,
+    title: "Favoriten",
+    text: "Markiere wichtige Prompts und halte häufig genutzte Bausteine schneller griffbereit.",
+  },
+  {
+    icon: Copy,
+    title: "Direkt kopieren",
+    text: "Übernimm die optimierte Fassung mit einem Klick in dein bevorzugtes KI-Tool.",
+  },
+  {
+    icon: FileJson,
+    title: "JSON Export und Import",
+    text: "Sichere deine Bibliothek lokal und stelle sie bei Bedarf in einem Browser wieder her.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Lokaler Speicher",
+    text: "Prompts, Kategorien, Tabs und Einstellungen bleiben im Browser gespeichert.",
+  },
+];
+
+const audiences = [
+  "Prompt Engineers",
+  "KI-Anwender",
+  "Content-Ersteller",
+  "Entwickler",
+  "Selbstständige",
+  "Teams mit wiederkehrenden KI-Abläufen",
+];
+
+const licenseFeatures = [
+  "12 Monate Nutzung als browserbasierte App",
+  "7 Tage kostenlose Testphase",
+  "Ein Nutzerzugriff pro Lizenz",
+  "Mehrere Lizenzen derselben App möglich",
+  "Automatische Verlängerung um weitere 12 Monate",
+  "Kündigungsfrist 1 Monat vor Ablauf",
+  "Sichere Online-Zahlung",
+  "Preis zzgl. 19 % MwSt.",
+];
+
+const faqs = [
+  {
+    question: "Ist SMART PromptCreator eine browserbasierte App?",
+    answer:
+      "Ja. Die App wird über einen Link im Webbrowser geöffnet. Eine separate Desktop-Installation ist für diese Version nicht erforderlich.",
+  },
+  {
+    question: "Werden meine Prompts automatisch in der Cloud gespeichert?",
+    answer:
+      "Nein. Prompts, Kategorien, Tabs, Einstellungen und der verschlüsselte Anthropic API-Key bleiben lokal im Browser gespeichert.",
+  },
+  {
+    question: "Brauche ich ein Konto?",
+    answer:
+      "Für Trial, Kauf und Lizenzprüfung kann ein Nutzerkonto bzw. Login per E-Mail/Magic Link erforderlich sein. Deine Inhalte werden dadurch nicht automatisch in einer Cloud-Datenbank gespeichert.",
+  },
+  {
+    question: "Können andere Nutzer auf meine Bibliothek zugreifen?",
+    answer:
+      "Nein. Lokale Inhalte sind nicht für andere Nutzer freigegeben. Gemeinsame Cloud-Arbeitsbereiche sind in dieser Version nicht vorgesehen.",
+  },
+  {
+    question: "Welche KI-Funktionen sind enthalten?",
+    answer:
+      "SMART PromptCreator kann Prompts optimieren und passende Metadaten wie Titel, Beschreibung, Kategorie und Tags vorschlagen. Die Anthropic-Nutzung erfolgt mit eigenem API-Key.",
+  },
+  {
+    question: "Kann ich meine Daten exportieren?",
+    answer:
+      "Ja. Die Prompt-Bibliothek kann als JSON exportiert und später wieder importiert werden.",
+  },
+  {
+    question: "Auf welchen Plattformen läuft die App?",
+    answer:
+      "SMART PromptCreator läuft in modernen Browsern auf Windows, macOS und anderen Systemen mit aktuellem Webbrowser.",
+  },
+  {
+    question: "Wie funktioniert die Lizenz?",
+    answer:
+      "Die Jahreslizenz läuft 12 Monate und verlängert sich automatisch um weitere 12 Monate, wenn sie nicht spätestens 1 Monat vor Ablauf gekündigt wird.",
+  },
+  {
+    question: "Kann ich mehrere Lizenzen kaufen?",
+    answer:
+      "Ja. Du kannst mehrere Lizenzen derselben App kaufen. Ein gemeinsamer Checkout für unterschiedliche Apps ist für später vorgesehen.",
+  },
+];
+
+function App() {
+  const [isPreorderOpen, setIsPreorderOpen] = useState(false);
+
+  return (
+    <main className="min-h-screen bg-paper text-ink">
+      <Hero onPreorderClick={() => setIsPreorderOpen(true)} />
+      <Problem />
+      <FeatureGrid />
+      <LocalWorkspace />
+      <License onPreorderClick={() => setIsPreorderOpen(true)} />
+      <Audience />
+      <FAQ />
+      <Footer />
+      <PreorderDialog isOpen={isPreorderOpen} onClose={() => setIsPreorderOpen(false)} />
+    </main>
+  );
+}
+
+function Hero({ onPreorderClick }: { onPreorderClick: () => void }) {
+  return (
+    <section id="top" className="relative min-h-[680px] overflow-hidden border-b border-ink/10 bg-[#07110f] text-white">
+      <div className="absolute inset-0">
+        <img src={heroScreenshotUrl} alt="" className="h-full w-full object-cover object-left-top opacity-72" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#03100d] via-[#07110f]/88 to-[#07110f]/18" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#03100d]/95 via-[#03100d]/68 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#03100d]/74 via-transparent to-[#03100d]/20" />
+      </div>
+      <div className="relative border-b border-ink/10 bg-[#f8f6f1]/95 shadow-[0_18px_60px_rgba(2,8,19,0.18)] backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
+          <a href="#top" className="flex items-center gap-3 font-semibold tracking-normal text-ink">
+            <img src={logoUrl} alt="" className="h-9 w-9 rounded-lg shadow-sm" />
+            <span>SMART PromptCreator</span>
+          </a>
+          <nav className="hidden items-center gap-7 text-sm text-graphite/70 md:flex">
+            <a href="#features" className="hover:text-ink">Funktionen</a>
+            <a href="#local" className="hover:text-ink">Konto</a>
+            <a href="#license" className="hover:text-ink">Lizenz</a>
+            <a href="#faq" className="hover:text-ink">FAQ</a>
+          </nav>
+          <button type="button" className="hidden h-11 items-center gap-2 rounded-lg bg-ink px-5 text-sm font-semibold text-white transition hover:bg-ink/88 sm:inline-flex" onClick={onPreorderClick}>
+            Lizenz sichern
+            <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+      <div className="relative mx-auto flex min-h-[604px] max-w-7xl flex-col px-5 pb-6 sm:px-6 lg:px-8">
+        <div className="flex flex-1 items-center py-12 lg:py-14">
+          <div className="max-w-4xl">
+            <p className="eyebrow text-[#A0F5E8]">Browserbasierte Prompt-Produktivitäts-App</p>
+            <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.08] px-4 py-2 text-sm text-white/78 backdrop-blur">
+              <Sparkles className="h-4 w-4 text-[#A0F5E8]" />
+              Lokale Prompt-Bibliothek mit KI-gestützter Optimierung
+            </p>
+            <h1 className="mt-7 max-w-3xl text-4xl font-semibold leading-[1.04] tracking-normal text-white sm:text-6xl lg:text-7xl">
+              SMART PromptCreator
+            </h1>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl">
+              Sammle, strukturiere und optimiere deine wichtigsten KI-Prompts in einem eigenen lokalen Arbeitsbereich. Klar geordnet, schnell auffindbar und bereit für den nächsten Einsatz.
+            </p>
+            <div className="mt-9 grid w-full max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2">
+              <button type="button" className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-ink transition hover:bg-[#f4f1eb]" onClick={onPreorderClick}>
+                Jetzt kaufen
+                <ArrowRight className="h-4 w-4" />
+              </button>
+              <a className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-white/25 bg-white/[0.06] px-5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/[0.12]" href="#features">
+                Funktionen ansehen
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+            <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
+              {[
+                ["Lokal gespeichert", "Prompts bleiben im Browser"],
+                ["KI-optimiert", "Aus Rohideen werden klare Zielprompts"],
+                ["Wiederverwendbar", "Suchen, taggen, kopieren"],
+              ].map(([title, text]) => (
+                <div className="rounded-lg border border-white/10 bg-white/[0.07] p-4 text-center backdrop-blur" key={title}>
+                  <div className="flex items-center justify-center gap-2 text-sm font-semibold text-white">
+                    <Check className="h-4 w-4 text-[#A0F5E8]" />
+                    {title}
+                  </div>
+                  <p className="mt-2 text-sm leading-6 text-white/64">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Problem() {
+  return (
+    <section className="section">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <div>
+          <p className="eyebrow">Problem und Nutzen</p>
+          <h2 className="section-title">Gute Prompts sind Arbeitskapital. Ohne Struktur verschwinden sie zu schnell.</h2>
+        </div>
+        <div className="grid gap-4 text-lg leading-8 text-graphite/75">
+          <p>
+            Wer regelmäßig mit KI arbeitet, entwickelt nach und nach wertvolle Formulierungen, Rollen, Abläufe und Ausgabeformate. In Chats, Notizen und Dateien werden diese Bausteine aber schwer wiederzufinden.
+          </p>
+          <p>
+            SMART PromptCreator bringt deine Prompt-Arbeit in eine ruhige Bibliothek: lokal gespeichert, sauber kategorisiert, suchbar und mit KI-Unterstützung optimierbar.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FeatureGrid() {
+  return (
+    <section id="features" className="section bg-white/45">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <p className="eyebrow">Funktionen</p>
+          <h2 className="section-title">Alles, was eine fokussierte Prompt-Bibliothek im Browser braucht.</h2>
+        </div>
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature) => {
+            const Icon = feature.icon;
+            return (
+              <article className="feature-card" key={feature.title}>
+                <div className="grid h-11 w-11 place-items-center rounded-lg bg-[#e3f1ed] text-[#256f63]">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-5 text-xl font-semibold tracking-normal">{feature.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-graphite/70">{feature.text}</p>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LocalWorkspace() {
+  return (
+    <section id="local" className="section">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+        <div>
+          <p className="eyebrow">Nutzung und eigener Arbeitsbereich</p>
+          <h2 className="section-title">Browser öffnen, Prompt-Bibliothek nutzen, lokal behalten.</h2>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-graphite/75">
+            SMART PromptCreator ist als browserbasierte App gedacht. Deine Inhalte liegen lokal im Browser und können über JSON gesichert oder übertragen werden. Ein Login kann für Trial, Kauf und Lizenzprüfung nötig sein, speichert deine Inhalte aber nicht automatisch in einer Cloud-Datenbank.
+          </p>
+        </div>
+        <div className="grid gap-3">
+          {[
+            [Database, "Lokaler Speicher", "IndexedDB im Browser für Prompts, Tabs, Kategorien und Einstellungen."],
+            [Lock, "Getrennte Inhalte", "Andere Nutzer haben keinen Zugriff auf deine lokale Bibliothek."],
+            [FileJson, "Export und Import", "JSON-Sicherungen ermöglichen Backups und Wechsel zwischen Browsern."],
+            [KeyRound, "Eigener API-Key", "Anthropic-Funktionen werden mit deinem eigenen API-Key genutzt."],
+          ].map(([Icon, title, text]) => (
+            <div className="rounded-lg border border-ink/10 bg-white/70 p-5 shadow-sm" key={String(title)}>
+              <div className="flex gap-4">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-mist text-blue">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="font-semibold">{String(title)}</h3>
+                  <p className="mt-1 text-sm leading-6 text-graphite/70">{String(text)}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function License({ onPreorderClick }: { onPreorderClick: () => void }) {
+  return (
+    <section id="license" className="section bg-[#111816] text-white">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+        <div>
+          <p className="eyebrow text-[#A0F5E8]">Lizenzmodell</p>
+          <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-normal sm:text-4xl lg:text-5xl">
+            Professionelle Jahreslizenz für deinen Prompt-Arbeitsbereich.
+          </h2>
+          <p className="mt-6 text-lg leading-8 text-white/70">
+            Der Kaufbereich wird vorbereitet. Bis Trial, Zahlung und Lizenzfreischaltung aktiv sind, kannst du eine Vorbestellung vormerken lassen.
+          </p>
+          <button type="button" className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-ink transition hover:bg-[#f4f1eb]" onClick={onPreorderClick}>
+            Lizenz sichern
+            <ArrowRight className="h-4 w-4" />
+          </button>
+        </div>
+        <div className="rounded-lg border border-white/12 bg-white/[0.06] p-6 shadow-glow">
+          <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
+            <div>
+              <p className="text-sm text-white/60">Jahreslizenz</p>
+              <h3 className="mt-1 text-2xl font-semibold">12 Monate Nutzung</h3>
+            </div>
+            <BadgeCheck className="h-9 w-9 text-[#A0F5E8]" />
+          </div>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {licenseFeatures.map((feature) => (
+              <div className="flex gap-3 text-sm leading-6 text-white/76" key={feature}>
+                <Check className="mt-1 h-4 w-4 shrink-0 text-[#A0F5E8]" />
+                <span>{feature}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Audience() {
+  return (
+    <section className="section">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <p className="eyebrow">Zielgruppe</p>
+          <h2 className="section-title">Für alle, die Prompts nicht immer wieder neu erfinden wollen.</h2>
+        </div>
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {audiences.map((audience) => (
+            <div className="flex items-center gap-3 rounded-lg border border-ink/10 bg-white/70 p-4 text-sm font-semibold shadow-sm" key={audience}>
+              <Users className="h-5 w-5 text-blue" />
+              {audience}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQ() {
+  return (
+    <section id="faq" className="section bg-white/45">
+      <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
+        <div>
+          <p className="eyebrow">FAQ</p>
+          <h2 className="section-title">Wichtige Fragen zur Nutzung.</h2>
+        </div>
+        <div className="mt-10 grid gap-3">
+          {faqs.map((item) => (
+            <details className="group rounded-lg border border-ink/10 bg-white/80 p-5 shadow-sm" key={item.question}>
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
+                <span>{item.question}</span>
+                <HelpCircle className="h-5 w-5 shrink-0 text-blue transition group-open:rotate-45" />
+              </summary>
+              <p className="mt-4 leading-7 text-graphite/72">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-ink/10 bg-paper">
+      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-10 text-center sm:px-6 md:flex-row md:items-center md:justify-between md:text-left lg:px-8">
+        <div className="flex flex-col items-center gap-3 md:flex-row">
+          <img src={logoUrl} alt="" className="h-11 w-11 rounded-lg shadow-sm" />
+          <div>
+            <p className="font-semibold">SMART PromptCreator</p>
+            <p className="mt-1 text-sm text-graphite/62">Professionelle Prompt-Bibliothek für klare KI-Arbeit.</p>
+          </div>
+        </div>
+        <div className="text-sm text-graphite/68">
+          <p>© 2026 SmartBuilt-AI · powered by BuiltSmart Hub - Bernhard Metzger</p>
+          <div className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-end">
+            {legalLinks.map((link) => (
+              <a className="hover:text-ink" href={link.href} key={link.label}>
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function PreorderDialog({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 grid place-items-center bg-black/45 px-5 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="preorder-title">
+      <div className="w-full max-w-xl rounded-lg bg-[#fdfcf8] p-6 shadow-soft">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="eyebrow">Vorbestellung</p>
+            <h2 id="preorder-title" className="mt-2 text-2xl font-semibold tracking-normal">
+              SMART PromptCreator ist in Vorbereitung.
+            </h2>
+          </div>
+          <button type="button" className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ink/10 text-graphite transition hover:bg-mist" onClick={onClose} aria-label="Schließen">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+        <div className="mt-5 grid gap-4 text-graphite/74">
+          <p>Der Kaufbereich wird derzeit vorbereitet. Bei Interesse kannst du eine Vorbestellung vormerken lassen.</p>
+          <p>Sobald Trial, Zahlung und Lizenzfreischaltung aktiv sind, führt der Kaufbutton direkt zur sicheren Online-Bestellung.</p>
+        </div>
+        <div className="mt-7 grid gap-3 sm:grid-cols-2">
+          <a className="button bg-ink text-white hover:bg-graphite" href={preorderHref}>
+            Vorbestellung anfragen
+            <ArrowRight className="h-4 w-4" />
+          </a>
+          <button type="button" className="button border border-ink/12 bg-white text-ink hover:bg-mist" onClick={onClose}>
+            Schließen
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root")! as HTMLElement & {
+  reactRoot?: ReturnType<typeof ReactDOM.createRoot>;
+};
+const root = rootElement.reactRoot ?? ReactDOM.createRoot(rootElement);
+rootElement.reactRoot = root;
+
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+);

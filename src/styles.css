@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #f6f3ee;
+}
+
+@layer components {
+  .section {
+    @apply py-20 sm:py-24;
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold uppercase tracking-normal text-blue;
+  }
+
+  .section-title {
+    @apply mt-3 text-3xl font-semibold leading-tight tracking-normal text-ink sm:text-4xl lg:text-5xl;
+  }
+
+  .feature-card {
+    @apply rounded-lg border border-ink/10 bg-white/75 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-soft;
+  }
+
+  .button {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition;
+  }
+}
