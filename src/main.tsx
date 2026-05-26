@@ -107,15 +107,16 @@ const useCases = [
   "Interne KI-Standards",
 ];
 
-const licenseFeatures = [
-  "12 Monate Nutzung als browserbasierte App",
-  "7 Tage kostenlose Testphase",
-  "Ein Nutzerzugriff pro Lizenz",
-  "Mehrere Lizenzen derselben App möglich",
-  "Automatische Verlängerung um weitere 12 Monate",
-  "Kündigungsfrist 1 Monat vor Ablauf",
-  "Sichere Online-Zahlung",
-  "Preis zzgl. 19 % MwSt.",
+const licenseBadges = [
+  "12 Monate Laufzeit",
+  "3 Tage testen",
+  "1 Nutzerzugriff",
+];
+
+const licenseTerms = [
+  ["Verlängerung", "Automatisch um 12 Monate"],
+  ["Kündigung", "1 Monat vor Ablauf"],
+  ["Zahlung", "Sichere Online-Zahlung"],
 ];
 
 const faqs = [
@@ -346,37 +347,71 @@ function LocalWorkspace() {
 
 function License() {
   return (
-    <section id="license" className="section bg-[#111816] text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+    <section id="license" className="section bg-[#071a2d] text-white">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
         <div>
-          <p className="eyebrow text-[#A0F5E8]">Lizenzmodell</p>
-          <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-normal sm:text-4xl lg:text-5xl">
-            Professionelle Jahreslizenz für deinen Prompt-Arbeitsbereich.
+          <p className="text-base font-semibold tracking-normal text-white/66">Lizenzmodell</p>
+          <h2 className="mt-3 max-w-2xl text-5xl font-semibold leading-[1.05] tracking-normal text-white sm:text-6xl lg:text-7xl">
+            Eine professionelle Jahreslizenz für systematische Prompt-Arbeit.
           </h2>
-          <p className="mt-6 text-lg leading-8 text-white/70">
-            Über die Kontaktseite kannst du dein Interesse an einer Lizenz übermitteln und die nächsten Schritte zur Freischaltung anstoßen.
+          <p className="mt-8 max-w-2xl text-lg font-semibold leading-8 text-white/68">
+            Für Anwender, Berater, Agenturen und Teams, die Prompts regelmäßig entwickeln, optimieren und als lokale Arbeitsbibliothek dauerhaft wiederverwenden möchten.
           </p>
-          <a className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-ink transition hover:bg-[#f4f1eb]" href={licenseUrl}>
-            Lizenz sichern
-            <ArrowRight className="h-4 w-4" />
-          </a>
+          <p className="mt-7 max-w-xl text-lg font-semibold leading-8 text-white/88">
+            Pro Lizenz ist ein persönlicher Nutzerzugriff vorgesehen. Mehrere Lizenzen bedeuten mehrere getrennte Nutzerzugriffe, keinen gemeinsamen Cloud-Arbeitsbereich.
+          </p>
         </div>
-        <div className="rounded-lg border border-white/12 bg-white/[0.06] p-6 shadow-glow">
-          <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
+        <div className="rounded-lg border border-white/20 bg-[#354763] p-7 shadow-[0_30px_80px_rgba(0,0,0,0.22)] sm:p-9">
+          <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="text-sm text-white/60">Jahreslizenz</p>
-              <h3 className="mt-1 text-2xl font-semibold">12 Monate Nutzung</h3>
+              <p className="text-sm font-semibold uppercase text-white/68">Professional</p>
+              <h3 className="mt-2 text-3xl font-semibold tracking-normal sm:text-4xl">Jahreslizenz</h3>
             </div>
             <BadgeCheck className="h-9 w-9 text-[#A0F5E8]" />
           </div>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            {licenseFeatures.map((feature) => (
-              <div className="flex gap-3 text-sm leading-6 text-white/76" key={feature}>
-                <Check className="mt-1 h-4 w-4 shrink-0 text-[#A0F5E8]" />
-                <span>{feature}</span>
+
+          <div className="mt-8">
+            <div className="flex flex-wrap items-end gap-x-5 gap-y-2">
+              <p className="text-7xl font-semibold leading-none tracking-normal text-white sm:text-8xl">99 €</p>
+              <p className="pb-3 text-lg font-semibold text-white/86">pro Jahr zzgl. 19% MwSt.</p>
+            </div>
+            <p className="mt-3 text-base font-semibold leading-7 text-white/78">
+              117,81 € inkl. MwSt.
+              <br />
+              Entspricht 8,25 € netto / 9,82 € brutto pro Monat
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            {licenseBadges.map((badge) => (
+              <div className="rounded-full border border-white/14 bg-white/10 px-4 py-3 text-center text-sm font-semibold text-white/92" key={badge}>
+                {badge}
               </div>
             ))}
           </div>
+
+          <div className="mt-5 grid gap-3 sm:grid-cols-3">
+            {licenseTerms.map(([label, text]) => (
+              <div className="rounded-lg bg-[#223754] p-4 text-center" key={label}>
+                <p className="text-sm font-semibold uppercase text-[#A0F5E8]">{label}</p>
+                <p className="mt-2 text-base font-semibold leading-6 text-white">{text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-5 rounded-lg border border-[#A0F5E8]/16 bg-[#456078] p-5 text-center">
+            <p className="text-sm font-semibold uppercase text-[#A0F5E8]">KI-Nutzung</p>
+            <p className="mt-2 text-base font-semibold text-white">Lokale Optimierung oder eigener Anthropic API-Key</p>
+          </div>
+
+          <a className="mt-8 inline-flex h-14 w-full items-center justify-center gap-3 rounded-lg bg-white px-5 text-base font-semibold text-ink transition hover:bg-[#f4f1eb]" href={licenseUrl}>
+            Lizenz sichern
+            <ArrowRight className="h-5 w-5" />
+          </a>
+
+          <p className="mt-5 text-center text-sm font-semibold text-white/62">
+            Jahreslizenz | sichere Zahlung | persönlicher Nutzerzugriff
+          </p>
         </div>
       </div>
     </section>
