@@ -295,7 +295,7 @@ function Hero() {
 
 function Problem() {
   return (
-    <section className="section">
+    <section className="section bg-[#f7f3ec]">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <p className="eyebrow">Problem und Nutzen</p>
@@ -316,7 +316,7 @@ function Problem() {
 
 function FeatureGrid() {
   return (
-    <section id="features" className="section bg-white/45">
+    <section id="features" className="section bg-[#eef4ff]">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <p className="eyebrow">Funktionen</p>
@@ -343,7 +343,7 @@ function FeatureGrid() {
 
 function FullView() {
   return (
-    <section className="section bg-[#f5f3ed]">
+    <section className="section bg-[#f5f1e8]">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
           <div>
@@ -382,7 +382,7 @@ function FullView() {
 
 function LocalWorkspace() {
   return (
-    <section id="local" className="section">
+    <section id="local" className="section bg-[#edf6f2]">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <div>
           <p className="eyebrow">Nutzung und eigener Arbeitsbereich</p>
@@ -491,7 +491,7 @@ function License() {
 
 function UseCases() {
   return (
-    <section className="section bg-white/45">
+    <section className="section bg-[#f3f6fb]">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <p className="eyebrow">Einsatzbereiche</p>
@@ -515,7 +515,7 @@ function UseCases() {
 
 function Audience() {
   return (
-    <section className="section">
+    <section className="section bg-[#f8f6f1]">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <p className="eyebrow">Zielgruppe</p>
@@ -536,7 +536,7 @@ function Audience() {
 
 function FAQ() {
   return (
-    <section id="faq" className="section bg-white/45">
+    <section id="faq" className="section bg-[#eef4ff]">
       <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8">
         <div>
           <p className="eyebrow">FAQ</p>
@@ -562,7 +562,7 @@ function FAQ() {
 
 function Footer() {
   return (
-    <footer className="border-t border-ink/10 bg-paper">
+    <footer className="border-t border-ink/10 bg-[#f8f6f1]">
       <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 text-center sm:px-6 md:grid-cols-[1fr_auto] md:items-center md:text-left lg:px-8">
         <div className="flex flex-col items-center gap-3 md:flex-row md:justify-start">
           <img src={logoUrl} alt="" className="h-11 w-11 rounded-lg shadow-sm" />
