@@ -121,54 +121,64 @@ const licenseTerms = [
 
 const faqs = [
   {
-    question: "Ist SMART PromptCreator eine browserbasierte App?",
+    question: "Welchen Nutzen bietet SMART PromptCreator?",
     answer:
-      "Ja. Die App wird über einen Link im Webbrowser geöffnet. Eine separate Desktop-Installation ist für diese Version nicht erforderlich.",
+      "SMART PromptCreator hilft dir, gute Prompts strukturiert aufzubauen, gezielt zu verbessern und dauerhaft wiederzuverwenden. Statt erfolgreiche Eingaben in Chatverläufen oder Notizen zu verlieren, sammelst du sie in einer lokalen Bibliothek und entwickelst daraus professionelle Vorlagen für wiederkehrende KI-Aufgaben.",
   },
   {
-    question: "Werden meine Prompts automatisch in der Cloud gespeichert?",
+    question: "Wie wird die App geöffnet?",
     answer:
-      "Nein. Prompts, Kategorien, Tabs, Einstellungen und der verschlüsselte Anthropic API-Key bleiben lokal im Browser gespeichert.",
+      "Die App wird nach dem Download über den mitgelieferten Starter geöffnet. Sie läuft lokal auf deinem Gerät und wird anschließend im Browser angezeigt.",
   },
   {
-    question: "Brauche ich ein Konto?",
+    question: "Gibt es eine Windows- und macOS-Version?",
     answer:
-      "Für Trial, Kauf und Lizenzprüfung kann ein Nutzerkonto bzw. Login per E-Mail/Magic Link erforderlich sein. Deine Inhalte werden dadurch nicht automatisch in einer Cloud-Datenbank gespeichert.",
+      "Ja. Die App kann auf Windows und macOS lokal im Browser genutzt werden. Dafür gibt es passende Starter für das jeweilige System.",
   },
   {
-    question: "Können andere Nutzer auf meine Bibliothek zugreifen?",
+    question: "Werden Daten in der Cloud gespeichert?",
     answer:
-      "Nein. Lokale Inhalte sind nicht für andere Nutzer freigegeben. Gemeinsame Cloud-Arbeitsbereiche sind in dieser Version nicht vorgesehen.",
+      "Nein. Deine Inhalte werden lokal auf deinem Gerät bzw. im lokalen Browser-Speicher gespeichert. Es gibt keine automatische zentrale Cloud-Datenbank und keine automatische Synchronisierung zwischen Nutzern.",
   },
   {
-    question: "Welche KI-Funktionen sind enthalten?",
+    question: "Kann ich Daten exportieren?",
     answer:
-      "SMART PromptCreator kann Prompts optimieren und passende Metadaten wie Titel, Beschreibung, Kategorie und Tags vorschlagen. Die Anthropic-Nutzung erfolgt mit eigenem API-Key, der lokal verschlüsselt gespeichert wird.",
+      "Ja. Du kannst deine lokale Prompt-Bibliothek als JSON exportieren und später wieder importieren, z. B. zur Sicherung oder zur Übertragung auf ein anderes Gerät.",
   },
   {
-    question: "Müssen Inhalte für die Optimierung an eine externe API gesendet werden?",
+    question: "Gibt es KI-Funktionen?",
     answer:
-      "Nein. Du kannst je nach Situation zwischen lokaler Regeloptimierung und KI-gestützter Optimierung wählen. Externe API-Anfragen erfolgen nur, wenn du die Anthropic-Optimierung aktiv nutzt.",
+      "Ja. SMART PromptCreator unterstützt beim Optimieren von Prompts und kann passende Strukturen, Titel, Beschreibungen, Kategorien und Tags vorschlagen. Für KI-gestützte Funktionen wird ein eigener API-Key benötigt.",
   },
   {
-    question: "Kann ich meine Daten exportieren?",
+    question: "Warum brauche ich einen Anthropic API-Key?",
     answer:
-      "Ja. Die Prompt-Bibliothek kann als JSON exportiert und später wieder importiert werden.",
+      "Die KI-Funktionen laufen über die Anthropic API. Dafür wird ein eigener Anthropic API-Key benötigt. Ein normales Claude-Abo, z. B. Claude Pro, ist dafür nicht ausreichend. Für API-Nutzung können zusätzliche Kosten nach Anthropic-Abrechnung entstehen. Inhalte werden nur für die jeweilige KI-Anfrage an den Anbieter übertragen.",
   },
   {
-    question: "Auf welchen Plattformen läuft die App?",
+    question: "Gibt es eine kostenlose Testphase?",
     answer:
-      "SMART PromptCreator läuft in modernen Browsern auf Windows, macOS und anderen Systemen mit aktuellem Webbrowser.",
+      "Ja, sofern dieses Modell aktiviert ist. Die App kann dann für einen begrenzten Zeitraum mit vollem Funktionsumfang getestet werden.",
+  },
+  {
+    question: "Brauche ich ein Nutzerkonto?",
+    answer:
+      "Für Testphase, Kauf und Lizenzprüfung kann ein Nutzerkonto erforderlich sein. Die gespeicherten Inhalte der App bleiben davon getrennt lokal auf deinem Gerät.",
   },
   {
     question: "Wie funktioniert die Lizenz?",
     answer:
-      "Die Jahreslizenz läuft 12 Monate und verlängert sich automatisch um weitere 12 Monate, wenn sie nicht spätestens 1 Monat vor Ablauf gekündigt wird.",
+      "Du erhältst eine Jahreslizenz für 12 Monate. Sie verlängert sich automatisch um weitere 12 Monate, sofern sie nicht spätestens 1 Monat vor Ablauf gekündigt wird.",
   },
   {
-    question: "Kann ich mehrere Lizenzen kaufen?",
+    question: "Kann ich Prompts strukturiert aufbauen?",
     answer:
-      "Ja. Du kannst mehrere Lizenzen derselben App kaufen. Ein gemeinsamer Checkout für unterschiedliche Apps ist für später vorgesehen.",
+      "Ja. Prompts können mit Rolle, Ziel, Kontext, Aufgabe, Ausgabeformat und Qualitätsanforderungen aufgebaut werden. Zusätzlich kannst du zwischen einer kompakten Variante und einer vollständigen Premium-Struktur für anspruchsvollere Aufgaben arbeiten.",
+  },
+  {
+    question: "Kann ich ohne KI-Anbindung arbeiten?",
+    answer:
+      "Ja. Du kannst deine Bibliothek lokal nutzen und Prompts manuell strukturieren, speichern, suchen, favorisieren und per JSON sichern. Die KI-Optimierung ist eine zusätzliche Funktion, wenn du einen eigenen Anthropic API-Key hinterlegst.",
   },
 ];
 
