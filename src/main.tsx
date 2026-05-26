@@ -506,7 +506,9 @@ function FAQ() {
             <details className="group rounded-lg border border-ink/10 bg-white/80 p-5 shadow-sm" key={item.question}>
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
                 <span>{item.question}</span>
-                <Plus className="h-5 w-5 shrink-0 text-blue transition group-open:rotate-45" />
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-blue/25 bg-mist/70 text-blue transition group-open:border-blue/45 group-open:bg-mist">
+                  <Plus className="h-4 w-4 transition group-open:rotate-45" />
+                </span>
               </summary>
               <p className="mt-4 leading-7 text-graphite/72">{item.answer}</p>
             </details>
