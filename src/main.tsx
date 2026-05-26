@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 import "./styles.css";
 
-const logoUrl = `${import.meta.env.BASE_URL}app-logo.svg`;
+const logoUrl = `${import.meta.env.BASE_URL}app-logo.png`;
 const heroScreenshotUrl = `${import.meta.env.BASE_URL}hero-app-screenshot.png`;
 const preorderSubject = encodeURIComponent("Vorbestellung SMART PromptCreator");
 const preorderHref = `mailto:info@built-smart-hub.com?subject=${preorderSubject}`;
@@ -39,18 +39,23 @@ const legalLinks = [
 const features = [
   {
     icon: Library,
-    title: "Prompt-Bibliothek",
-    text: "Sammle wiederverwendbare Prompts mit Titel, Beschreibung, Tags und klarer Struktur.",
+    title: "Prompt-Bibliothek und Werkstatt",
+    text: "Erfasse, verbessere und entwickle Prompts an einem zentralen lokalen Ort weiter.",
   },
   {
     icon: Sparkles,
     title: "Prompt-Optimierung",
-    text: "Verbessere Rohideen zu direkt nutzbaren Zielprompts mit einstellbarem Ziel, Stil und Format.",
+    text: "Mache aus spontanen Eingaben präzisere Zielprompts für verlässlichere KI-Ergebnisse.",
+  },
+  {
+    icon: Workflow,
+    title: "Klare Masterstruktur",
+    text: "Baue Prompts mit Rolle, Ziel, Kontext, Aufgabe, Ausgabeformat und Qualitätsanforderungen auf.",
   },
   {
     icon: BrainCircuit,
-    title: "KI-Metadaten",
-    text: "Lass Titel, Kurzbeschreibung, Kategorie und passende Tags für neue Prompts vorbereiten.",
+    title: "Kompakt und Premium",
+    text: "Nutze schnelle kompakte Prompts oder eine vollständige Struktur für anspruchsvollere Aufgaben.",
   },
   {
     icon: FolderKanban,
@@ -64,8 +69,8 @@ const features = [
   },
   {
     icon: Star,
-    title: "Favoriten",
-    text: "Markiere wichtige Prompts und halte häufig genutzte Bausteine schneller griffbereit.",
+    title: "Varianten weiterentwickeln",
+    text: "Dupliziere gute Prompts, markiere Favoriten und entwickle erfolgreiche Vorlagen gezielt weiter.",
   },
   {
     icon: Copy,
@@ -79,18 +84,29 @@ const features = [
   },
   {
     icon: ShieldCheck,
-    title: "Lokaler Speicher",
-    text: "Prompts, Kategorien, Tabs und Einstellungen bleiben im Browser gespeichert.",
+    title: "Lokale oder KI-Optimierung",
+    text: "Wähle zwischen lokaler Regeloptimierung und Anthropic-Anbindung mit eigenem API-Key.",
   },
 ];
 
 const audiences = [
-  "Prompt Engineers",
-  "KI-Anwender",
-  "Content-Ersteller",
-  "Entwickler",
   "Selbstständige",
-  "Teams mit wiederkehrenden KI-Abläufen",
+  "Berater",
+  "Agenturen",
+  "Marketing-Teams",
+  "Entwickler",
+  "Unternehmen mit wiederkehrender KI-Arbeit",
+];
+
+const useCases = [
+  "Marketingtexte",
+  "LinkedIn-Posts",
+  "Newsletter",
+  "Strategie- und Analyseaufgaben",
+  "Rechercheprompts",
+  "Coding und Automatisierung",
+  "Wiederkehrende Kundenprojekte",
+  "Interne KI-Standards",
 ];
 
 const licenseFeatures = [
@@ -128,7 +144,12 @@ const faqs = [
   {
     question: "Welche KI-Funktionen sind enthalten?",
     answer:
-      "SMART PromptCreator kann Prompts optimieren und passende Metadaten wie Titel, Beschreibung, Kategorie und Tags vorschlagen. Die Anthropic-Nutzung erfolgt mit eigenem API-Key.",
+      "SMART PromptCreator kann Prompts optimieren und passende Metadaten wie Titel, Beschreibung, Kategorie und Tags vorschlagen. Die Anthropic-Nutzung erfolgt mit eigenem API-Key, der lokal verschlüsselt gespeichert wird.",
+  },
+  {
+    question: "Müssen Inhalte für die Optimierung an eine externe API gesendet werden?",
+    answer:
+      "Nein. Du kannst je nach Situation zwischen lokaler Regeloptimierung und KI-gestützter Optimierung wählen. Externe API-Anfragen erfolgen nur, wenn du die Anthropic-Optimierung aktiv nutzt.",
   },
   {
     question: "Kann ich meine Daten exportieren?",
@@ -162,6 +183,7 @@ function App() {
       <FeatureGrid />
       <LocalWorkspace />
       <License onPreorderClick={() => setIsPreorderOpen(true)} />
+      <UseCases />
       <Audience />
       <FAQ />
       <Footer />
@@ -203,13 +225,13 @@ function Hero({ onPreorderClick }: { onPreorderClick: () => void }) {
             <p className="eyebrow text-[#A0F5E8]">Browserbasierte Prompt-Produktivitäts-App</p>
             <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.08] px-4 py-2 text-sm text-white/78 backdrop-blur">
               <Sparkles className="h-4 w-4 text-[#A0F5E8]" />
-              Lokale Prompt-Bibliothek mit KI-gestützter Optimierung
+              Lokale Prompt-Bibliothek und Prompt-Werkstatt
             </p>
             <h1 className="mt-7 max-w-3xl text-4xl font-semibold leading-[1.04] tracking-normal text-white sm:text-6xl lg:text-7xl">
               SMART PromptCreator
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/78 sm:text-xl">
-              Sammle, strukturiere und optimiere deine wichtigsten KI-Prompts in einem eigenen lokalen Arbeitsbereich. Klar geordnet, schnell auffindbar und bereit für den nächsten Einsatz.
+              Aus spontanen KI-Eingaben werden professionelle, wiederverwendbare Prompts. Erfasse Ideen strukturiert, optimiere sie gezielt und behalte deine besten Vorlagen lokal im Griff.
             </p>
             <div className="mt-9 grid w-full max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2">
               <button type="button" className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-ink transition hover:bg-[#f4f1eb]" onClick={onPreorderClick}>
@@ -224,8 +246,8 @@ function Hero({ onPreorderClick }: { onPreorderClick: () => void }) {
             <div className="mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
               {[
                 ["Lokal gespeichert", "Prompts bleiben im Browser"],
-                ["KI-optimiert", "Aus Rohideen werden klare Zielprompts"],
-                ["Wiederverwendbar", "Suchen, taggen, kopieren"],
+                ["Klar strukturiert", "Rolle, Ziel, Kontext und Format"],
+                ["Wiederverwendbar", "Varianten ableiten und kopieren"],
               ].map(([title, text]) => (
                 <div className="rounded-lg border border-white/10 bg-white/[0.07] p-4 text-center backdrop-blur" key={title}>
                   <div className="flex items-center justify-center gap-2 text-sm font-semibold text-white">
@@ -249,14 +271,14 @@ function Problem() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <p className="eyebrow">Problem und Nutzen</p>
-          <h2 className="section-title">Gute Prompts sind Arbeitskapital. Ohne Struktur verschwinden sie zu schnell.</h2>
+          <h2 className="section-title">Gute Prompts sind Arbeitskapital. Ohne System gehen sie zu schnell verloren.</h2>
         </div>
         <div className="grid gap-4 text-lg leading-8 text-graphite/75">
           <p>
-            Wer regelmäßig mit KI arbeitet, entwickelt nach und nach wertvolle Formulierungen, Rollen, Abläufe und Ausgabeformate. In Chats, Notizen und Dateien werden diese Bausteine aber schwer wiederzufinden.
+            Wer regelmäßig mit KI arbeitet, entwickelt wertvolle Rollen, Abläufe, Qualitätsanforderungen und Ausgabeformate. In Chatverläufen, Notizen oder einzelnen Dokumenten werden diese Bausteine aber schwer wiederzufinden.
           </p>
           <p>
-            SMART PromptCreator bringt deine Prompt-Arbeit in eine ruhige Bibliothek: lokal gespeichert, sauber kategorisiert, suchbar und mit KI-Unterstützung optimierbar.
+            SMART PromptCreator bringt deine Prompt-Arbeit in eine ruhige Bibliothek und Werkstatt: lokal gespeichert, sauber kategorisiert, suchbar, optimierbar und bereit für den nächsten professionellen Einsatz.
           </p>
         </div>
       </div>
@@ -270,7 +292,7 @@ function FeatureGrid() {
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <p className="eyebrow">Funktionen</p>
-          <h2 className="section-title">Alles, was eine fokussierte Prompt-Bibliothek im Browser braucht.</h2>
+          <h2 className="section-title">Alles, was eine fokussierte Prompt-Werkstatt im Browser braucht.</h2>
         </div>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => {
@@ -297,9 +319,9 @@ function LocalWorkspace() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <div>
           <p className="eyebrow">Nutzung und eigener Arbeitsbereich</p>
-          <h2 className="section-title">Browser öffnen, Prompt-Bibliothek nutzen, lokal behalten.</h2>
+          <h2 className="section-title">Browser öffnen, Prompt-Werkstatt nutzen, Daten lokal behalten.</h2>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-graphite/75">
-            SMART PromptCreator ist als browserbasierte App gedacht. Deine Inhalte liegen lokal im Browser und können über JSON gesichert oder übertragen werden. Ein Login kann für Trial, Kauf und Lizenzprüfung nötig sein, speichert deine Inhalte aber nicht automatisch in einer Cloud-Datenbank.
+            SMART PromptCreator ist als browserbasierte App gedacht. Deine Inhalte liegen lokal im Browser und können über JSON gesichert oder übertragen werden. Für die Optimierung kannst du zwischen lokaler Regeloptimierung und Anthropic-Anbindung mit eigenem API-Key wählen.
           </p>
         </div>
         <div className="grid gap-3">
@@ -307,7 +329,7 @@ function LocalWorkspace() {
             [Database, "Lokaler Speicher", "IndexedDB im Browser für Prompts, Tabs, Kategorien und Einstellungen."],
             [Lock, "Getrennte Inhalte", "Andere Nutzer haben keinen Zugriff auf deine lokale Bibliothek."],
             [FileJson, "Export und Import", "JSON-Sicherungen ermöglichen Backups und Wechsel zwischen Browsern."],
-            [KeyRound, "Eigener API-Key", "Anthropic-Funktionen werden mit deinem eigenen API-Key genutzt."],
+            [KeyRound, "Eigener API-Key", "Anthropic-Funktionen werden mit deinem eigenen lokal gespeicherten API-Key genutzt."],
           ].map(([Icon, title, text]) => (
             <div className="rounded-lg border border-ink/10 bg-white/70 p-5 shadow-sm" key={String(title)}>
               <div className="flex gap-4">
@@ -360,6 +382,30 @@ function License({ onPreorderClick }: { onPreorderClick: () => void }) {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function UseCases() {
+  return (
+    <section className="section bg-white/45">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <div>
+          <p className="eyebrow">Einsatzbereiche</p>
+          <h2 className="section-title">Für wiederkehrende KI-Aufgaben, die Qualität und Struktur brauchen.</h2>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-graphite/75">
+            SMART PromptCreator eignet sich für Aufgaben, bei denen gute Prompts nicht einmalig entstehen, sondern systematisch weiterentwickelt und erneut eingesetzt werden.
+          </p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {useCases.map((useCase) => (
+            <div className="flex items-center gap-3 rounded-lg border border-ink/10 bg-white/80 p-4 text-sm font-semibold shadow-sm" key={useCase}>
+              <Tags className="h-5 w-5 text-blue" />
+              {useCase}
+            </div>
+          ))}
         </div>
       </div>
     </section>

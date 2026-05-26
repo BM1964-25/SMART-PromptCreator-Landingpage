@@ -5,9 +5,10 @@
   "type": "module",
   "description": "Landingpage for the SMART PromptCreator browser app.",
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "tsc -p tsconfig.json --noEmit && vite build",
-    "preview": "vite preview --host 127.0.0.1"
+    "dev": "cp index.source.html index.html && vite --host 127.0.0.1",
+    "build": "cp index.source.html index.html && tsc -p tsconfig.json --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "publish:root": "npm run build && mkdir -p assets && cp dist/index.html index.html && cp dist/app-logo.png app-logo.png && cp dist/hero-app-screenshot.png hero-app-screenshot.png && cp dist/assets/* assets/"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
