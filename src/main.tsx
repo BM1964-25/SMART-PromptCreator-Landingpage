@@ -354,7 +354,7 @@ function License() {
             Professionelle Jahreslizenz für deinen Prompt-Arbeitsbereich.
           </h2>
           <p className="mt-6 text-lg leading-8 text-white/70">
-            Der Kaufbereich wird vorbereitet. Bis Trial, Zahlung und Lizenzfreischaltung aktiv sind, kannst du eine Vorbestellung vormerken lassen.
+            Über die Kontaktseite kannst du dein Interesse an einer Lizenz übermitteln und die nächsten Schritte zur Freischaltung anstoßen.
           </p>
           <a className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-ink transition hover:bg-[#f4f1eb]" href={licenseUrl}>
             Lizenz sichern
