@@ -25,6 +25,7 @@ import "./styles.css";
 
 const logoUrl = `${import.meta.env.BASE_URL}app-logo.png`;
 const heroScreenshotUrl = `${import.meta.env.BASE_URL}hero-promptcreator-original.png`;
+const fullViewScreenshotUrl = `${import.meta.env.BASE_URL}app-full-view.png`;
 const licenseUrl = "https://bm1964-25.github.io/Landing-Tafel-Kontakt/";
 
 const legalLinks = [
@@ -208,6 +209,7 @@ function App() {
       <Hero />
       <Problem />
       <FeatureGrid />
+      <FullView />
       <LocalWorkspace />
       <License />
       <UseCases />
@@ -333,6 +335,45 @@ function FeatureGrid() {
               </article>
             );
           })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FullView() {
+  return (
+    <section className="section bg-[#f5f3ed]">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+          <div>
+            <p className="eyebrow">Gesamtansicht</p>
+            <h2 className="section-title">Eine Arbeitsfläche für Bibliothek, Werkstatt und Variantenvergleich.</h2>
+            <p className="mt-6 text-lg leading-8 text-graphite/75">
+              Die komplette Ansicht zeigt, wie SMART PromptCreator Promptsammlung, Strukturierung, KI-Optimierung und Ergebnisübernahme in einem ruhigen Browser-Arbeitsbereich verbindet.
+            </p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-3">
+            {[
+              ["Bibliothek", "Prompts, Kategorien, Tabs und Status bleiben sichtbar."],
+              ["Werkstatt", "Ziel, Kontext, Metadaten und Eingabe werden strukturiert bearbeitet."],
+              ["Varianten", "Kompakt und Premium lassen sich direkt vergleichen und übernehmen."],
+            ].map(([title, text]) => (
+              <div className="rounded-lg border border-ink/10 bg-white/78 p-4 shadow-sm" key={title}>
+                <p className="font-semibold">{title}</p>
+                <p className="mt-2 text-sm leading-6 text-graphite/70">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10 overflow-hidden rounded-lg border border-ink/10 bg-white shadow-[0_26px_80px_rgba(2,8,19,0.13)]">
+          <img
+            src={fullViewScreenshotUrl}
+            alt="SMART PromptCreator Gesamtansicht mit Prompt-Bibliothek, Prompt-Werkstatt, Variantenvergleich und optimierter Ausgabe"
+            className="block w-full"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>
