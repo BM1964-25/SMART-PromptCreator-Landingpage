@@ -563,21 +563,24 @@ function FAQ() {
 function Footer() {
   return (
     <footer className="border-t border-ink/10 bg-paper">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-10 text-center sm:px-6 md:flex-row md:items-center md:justify-between md:text-left lg:px-8">
-        <div className="flex flex-col items-center gap-3 md:flex-row">
+      <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 text-center sm:px-6 md:grid-cols-[1fr_auto] md:items-center md:text-left lg:px-8">
+        <div className="flex flex-col items-center gap-3 md:flex-row md:justify-start">
           <img src={logoUrl} alt="" className="h-11 w-11 rounded-lg shadow-sm" />
           <div>
             <p className="font-semibold">SMART PromptCreator</p>
             <p className="mt-1 text-sm text-graphite/62">Professionelle Prompt-Bibliothek für klare KI-Arbeit.</p>
           </div>
         </div>
-        <div className="text-sm text-graphite/68">
-          <p>© 2026 SmartBuilt-AI · powered by BuiltSmart Hub - Bernhard Metzger</p>
-          <div className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-end">
-            {legalLinks.map((link) => (
-              <a className="hover:text-ink" href={link.href} key={link.label}>
-                {link.label}
-              </a>
+        <div className="text-sm text-graphite/68 md:text-right">
+          <p>© 2026 SmartBuilt-AI · Powered by BuiltSmart Hub - Bernhard Metzger</p>
+          <div className="mt-3 flex flex-wrap justify-center gap-x-2 gap-y-2 md:justify-end">
+            {legalLinks.map((link, index) => (
+              <span className="inline-flex items-center gap-2" key={link.label}>
+                {index > 0 && <span aria-hidden="true">|</span>}
+                <a className="hover:text-ink" href={link.href}>
+                  {link.label}
+                </a>
+              </span>
             ))}
           </div>
         </div>
