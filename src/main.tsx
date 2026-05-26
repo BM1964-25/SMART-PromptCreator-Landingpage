@@ -1,4 +1,4 @@
-import { StrictMode, useState } from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import {
   ArrowRight,
@@ -20,14 +20,12 @@ import {
   Tags,
   Users,
   Workflow,
-  X,
 } from "lucide-react";
 import "./styles.css";
 
 const logoUrl = `${import.meta.env.BASE_URL}app-logo.png`;
 const heroScreenshotUrl = `${import.meta.env.BASE_URL}hero-app-screenshot.png`;
-const preorderSubject = encodeURIComponent("Vorbestellung SMART PromptCreator");
-const preorderHref = `mailto:info@built-smart-hub.com?subject=${preorderSubject}`;
+const licenseUrl = "https://bm1964-25.github.io/Landing-Tafel-Kontakt/";
 
 const legalLinks = [
   { label: "Impressum", href: "https://www.built-smart-hub.com/impressum" },
@@ -174,25 +172,22 @@ const faqs = [
 ];
 
 function App() {
-  const [isPreorderOpen, setIsPreorderOpen] = useState(false);
-
   return (
     <main className="min-h-screen bg-paper text-ink">
-      <Hero onPreorderClick={() => setIsPreorderOpen(true)} />
+      <Hero />
       <Problem />
       <FeatureGrid />
       <LocalWorkspace />
-      <License onPreorderClick={() => setIsPreorderOpen(true)} />
+      <License />
       <UseCases />
       <Audience />
       <FAQ />
       <Footer />
-      <PreorderDialog isOpen={isPreorderOpen} onClose={() => setIsPreorderOpen(false)} />
     </main>
   );
 }
 
-function Hero({ onPreorderClick }: { onPreorderClick: () => void }) {
+function Hero() {
   return (
     <section id="top" className="relative min-h-[680px] overflow-hidden border-b border-ink/10 bg-[#07110f] text-white">
       <div className="absolute inset-0">
@@ -213,10 +208,10 @@ function Hero({ onPreorderClick }: { onPreorderClick: () => void }) {
             <a href="#license" className="hover:text-ink">Lizenz</a>
             <a href="#faq" className="hover:text-ink">FAQ</a>
           </nav>
-          <button type="button" className="hidden h-11 items-center gap-2 rounded-lg bg-ink px-5 text-sm font-semibold text-white transition hover:bg-ink/88 sm:inline-flex" onClick={onPreorderClick}>
+          <a className="hidden h-11 items-center gap-2 rounded-lg bg-ink px-5 text-sm font-semibold text-white transition hover:bg-ink/88 sm:inline-flex" href={licenseUrl}>
             Lizenz sichern
             <ArrowRight className="h-4 w-4" />
-          </button>
+          </a>
         </div>
       </div>
       <div className="relative mx-auto flex min-h-[604px] max-w-7xl flex-col px-5 pb-6 sm:px-6 lg:px-8">
@@ -234,10 +229,10 @@ function Hero({ onPreorderClick }: { onPreorderClick: () => void }) {
               Aus spontanen KI-Eingaben werden professionelle, wiederverwendbare Prompts. Erfasse Ideen strukturiert, optimiere sie gezielt und behalte deine besten Vorlagen lokal im Griff.
             </p>
             <div className="mt-9 grid w-full max-w-3xl grid-cols-1 gap-3 sm:grid-cols-2">
-              <button type="button" className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-ink transition hover:bg-[#f4f1eb]" onClick={onPreorderClick}>
+              <a className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-ink transition hover:bg-[#f4f1eb]" href={licenseUrl}>
                 Jetzt kaufen
                 <ArrowRight className="h-4 w-4" />
-              </button>
+              </a>
               <a className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-white/25 bg-white/[0.06] px-5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/[0.12]" href="#features">
                 Funktionen ansehen
                 <ArrowRight className="h-4 w-4" />
@@ -349,7 +344,7 @@ function LocalWorkspace() {
   );
 }
 
-function License({ onPreorderClick }: { onPreorderClick: () => void }) {
+function License() {
   return (
     <section id="license" className="section bg-[#111816] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
@@ -361,10 +356,10 @@ function License({ onPreorderClick }: { onPreorderClick: () => void }) {
           <p className="mt-6 text-lg leading-8 text-white/70">
             Der Kaufbereich wird vorbereitet. Bis Trial, Zahlung und Lizenzfreischaltung aktiv sind, kannst du eine Vorbestellung vormerken lassen.
           </p>
-          <button type="button" className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-ink transition hover:bg-[#f4f1eb]" onClick={onPreorderClick}>
+          <a className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-ink transition hover:bg-[#f4f1eb]" href={licenseUrl}>
             Lizenz sichern
             <ArrowRight className="h-4 w-4" />
-          </button>
+          </a>
         </div>
         <div className="rounded-lg border border-white/12 bg-white/[0.06] p-6 shadow-glow">
           <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
@@ -480,41 +475,6 @@ function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function PreorderDialog({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  if (!isOpen) return null;
-
-  return (
-    <div className="fixed inset-0 z-50 grid place-items-center bg-black/45 px-5 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="preorder-title">
-      <div className="w-full max-w-xl rounded-lg bg-[#fdfcf8] p-6 shadow-soft">
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <p className="eyebrow">Vorbestellung</p>
-            <h2 id="preorder-title" className="mt-2 text-2xl font-semibold tracking-normal">
-              SMART PromptCreator ist in Vorbereitung.
-            </h2>
-          </div>
-          <button type="button" className="grid h-10 w-10 shrink-0 place-items-center rounded-lg border border-ink/10 text-graphite transition hover:bg-mist" onClick={onClose} aria-label="Schließen">
-            <X className="h-5 w-5" />
-          </button>
-        </div>
-        <div className="mt-5 grid gap-4 text-graphite/74">
-          <p>Der Kaufbereich wird derzeit vorbereitet. Bei Interesse kannst du eine Vorbestellung vormerken lassen.</p>
-          <p>Sobald Trial, Zahlung und Lizenzfreischaltung aktiv sind, führt der Kaufbutton direkt zur sicheren Online-Bestellung.</p>
-        </div>
-        <div className="mt-7 grid gap-3 sm:grid-cols-2">
-          <a className="button bg-ink text-white hover:bg-graphite" href={preorderHref}>
-            Vorbestellung anfragen
-            <ArrowRight className="h-4 w-4" />
-          </a>
-          <button type="button" className="button border border-ink/12 bg-white text-ink hover:bg-mist" onClick={onClose}>
-            Schließen
-          </button>
-        </div>
-      </div>
-    </div>
   );
 }
 
