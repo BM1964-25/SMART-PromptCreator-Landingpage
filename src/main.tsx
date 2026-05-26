@@ -24,7 +24,7 @@ import {
 import "./styles.css";
 
 const logoUrl = `${import.meta.env.BASE_URL}app-logo.png`;
-const heroScreenshotUrl = `${import.meta.env.BASE_URL}hero-app-screenshot.png`;
+const heroScreenshotUrl = `${import.meta.env.BASE_URL}hero-promptcreator-workbench.png`;
 const licenseUrl = "https://bm1964-25.github.io/Landing-Tafel-Kontakt/";
 
 const legalLinks = [
