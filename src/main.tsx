@@ -88,7 +88,7 @@ const features = [
 ];
 
 const audiences = [
-  "Selbstständige",
+  "Selbstständige & Privatpersonen",
   "Berater",
   "Agenturen",
   "Marketing-Teams",
