@@ -116,7 +116,7 @@ const licenseBadges = [
 const licenseTerms = [
   ["Verlängerung", "Automatisch um 12 Monate"],
   ["Kündigung", "1 Monat vor Ablauf"],
-  ["Zahlung", "Sichere Online-Zahlung"],
+  ["Zahlung", "Sicherer Online-Zahlung"],
 ];
 
 const faqs = [
