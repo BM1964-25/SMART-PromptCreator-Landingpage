@@ -81,6 +81,16 @@ const features = [
     text: "Sichere deine Bibliothek lokal und stelle sie bei Bedarf in einem Browser wieder her.",
   },
   {
+    icon: Tags,
+    title: "Titel und Metadaten",
+    text: "Ergänze Titel, Beschreibung, Kategorie und Tags, damit Prompts später leichter auffindbar bleiben.",
+  },
+  {
+    icon: Database,
+    title: "Lokaler Arbeitsbereich",
+    text: "Speichere Prompts, Tabs, Kategorien und Einstellungen lokal in deinem eigenen Browser-Arbeitsbereich.",
+  },
+  {
     icon: ShieldCheck,
     title: "Lokale oder KI-Optimierung",
     text: "Wähle zwischen lokaler Regeloptimierung und Anthropic-Anbindung mit eigenem API-Key.",
