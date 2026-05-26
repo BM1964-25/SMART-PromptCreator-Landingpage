@@ -131,11 +131,6 @@ const licenseTerms = [
 
 const faqs = [
   {
-    question: "Welchen Nutzen bietet SMART PromptCreator?",
-    answer:
-      "SMART PromptCreator hilft dir, gute Prompts strukturiert aufzubauen, gezielt zu verbessern und dauerhaft wiederzuverwenden. Statt erfolgreiche Eingaben in Chatverläufen oder Notizen zu verlieren, sammelst du sie in einer lokalen Bibliothek und entwickelst daraus professionelle Vorlagen für wiederkehrende KI-Aufgaben.",
-  },
-  {
     question: "Wie wird die App geöffnet?",
     answer:
       "Die App wird nach dem Download über den mitgelieferten Starter geöffnet. Sie läuft lokal auf deinem Gerät und wird anschließend im Browser angezeigt.",
@@ -154,6 +149,16 @@ const faqs = [
     question: "Kann ich Daten exportieren?",
     answer:
       "Ja. Du kannst deine lokale Prompt-Bibliothek als JSON exportieren und später wieder importieren, z. B. zur Sicherung oder zur Übertragung auf ein anderes Gerät.",
+  },
+  {
+    question: "Welchen Nutzen bietet SMART PromptCreator?",
+    answer:
+      "SMART PromptCreator hilft dir, gute Prompts strukturiert aufzubauen, gezielt zu verbessern und dauerhaft wiederzuverwenden. Statt erfolgreiche Eingaben in Chatverläufen oder Notizen zu verlieren, sammelst du sie in einer lokalen Bibliothek und entwickelst daraus professionelle Vorlagen für wiederkehrende KI-Aufgaben.",
+  },
+  {
+    question: "Können Varianten dargestellt und verglichen werden?",
+    answer:
+      "Ja. SMART PromptCreator kann eine kompakte Variante für schnelle Ergebnisse und eine Premium-Variante mit vollständiger Masterstruktur darstellen. Dadurch kannst du unterschiedliche Prompt-Fassungen vergleichen, weiter verbessern und die passendste Ausgabe übernehmen.",
   },
   {
     question: "Gibt es KI-Funktionen?",
