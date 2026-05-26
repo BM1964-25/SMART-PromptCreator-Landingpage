@@ -9,10 +9,10 @@ import {
   Database,
   FileJson,
   FolderKanban,
-  HelpCircle,
   KeyRound,
   Library,
   Lock,
+  Plus,
   Search,
   ShieldCheck,
   Sparkles,
@@ -131,6 +131,26 @@ const licenseTerms = [
 
 const faqs = [
   {
+    question: "Welchen Nutzen bietet SMART PromptCreator?",
+    answer:
+      "SMART PromptCreator hilft dir, gute Prompts strukturiert aufzubauen, gezielt zu verbessern und dauerhaft wiederzuverwenden. Statt erfolgreiche Eingaben in Chatverläufen oder Notizen zu verlieren, sammelst du sie in einer lokalen Bibliothek und entwickelst daraus professionelle Vorlagen für wiederkehrende KI-Aufgaben.",
+  },
+  {
+    question: "Welche Vorteile habe ich im Arbeitsalltag?",
+    answer:
+      "Du arbeitest schneller, behältst den Überblick über bewährte Prompts und kannst Vorlagen gezielt weiterentwickeln. Kategorien, Tags, Favoriten, Suche und Varianten helfen dabei, gute Prompt-Arbeit nicht jedes Mal neu beginnen zu müssen.",
+  },
+  {
+    question: "Kann ich Prompts strukturiert aufbauen?",
+    answer:
+      "Ja. Prompts können mit Rolle, Ziel, Kontext, Aufgabe, Ausgabeformat und Qualitätsanforderungen aufgebaut werden. Zusätzlich kannst du zwischen einer kompakten Variante und einer vollständigen Premium-Struktur für anspruchsvollere Aufgaben arbeiten.",
+  },
+  {
+    question: "Können Varianten dargestellt und verglichen werden?",
+    answer:
+      "Ja. SMART PromptCreator kann eine kompakte Variante für schnelle Ergebnisse und eine Premium-Variante mit vollständiger Masterstruktur darstellen. Dadurch kannst du unterschiedliche Prompt-Fassungen vergleichen, weiter verbessern und die passendste Ausgabe übernehmen.",
+  },
+  {
     question: "Wie wird die App geöffnet?",
     answer:
       "Die App wird nach dem Download über den mitgelieferten Starter geöffnet. Sie läuft lokal auf deinem Gerät und wird anschließend im Browser angezeigt.",
@@ -151,16 +171,6 @@ const faqs = [
       "Ja. Du kannst deine lokale Prompt-Bibliothek als JSON exportieren und später wieder importieren, z. B. zur Sicherung oder zur Übertragung auf ein anderes Gerät.",
   },
   {
-    question: "Welchen Nutzen bietet SMART PromptCreator?",
-    answer:
-      "SMART PromptCreator hilft dir, gute Prompts strukturiert aufzubauen, gezielt zu verbessern und dauerhaft wiederzuverwenden. Statt erfolgreiche Eingaben in Chatverläufen oder Notizen zu verlieren, sammelst du sie in einer lokalen Bibliothek und entwickelst daraus professionelle Vorlagen für wiederkehrende KI-Aufgaben.",
-  },
-  {
-    question: "Können Varianten dargestellt und verglichen werden?",
-    answer:
-      "Ja. SMART PromptCreator kann eine kompakte Variante für schnelle Ergebnisse und eine Premium-Variante mit vollständiger Masterstruktur darstellen. Dadurch kannst du unterschiedliche Prompt-Fassungen vergleichen, weiter verbessern und die passendste Ausgabe übernehmen.",
-  },
-  {
     question: "Gibt es KI-Funktionen?",
     answer:
       "Ja. SMART PromptCreator unterstützt beim Optimieren von Prompts und kann passende Strukturen, Titel, Beschreibungen, Kategorien und Tags vorschlagen. Für KI-gestützte Funktionen wird ein eigener API-Key benötigt.",
@@ -169,6 +179,11 @@ const faqs = [
     question: "Warum brauche ich einen Anthropic API-Key?",
     answer:
       "Die KI-Funktionen laufen über die Anthropic API. Dafür wird ein eigener Anthropic API-Key benötigt. Ein normales Claude-Abo, z. B. Claude Pro, ist dafür nicht ausreichend. Für API-Nutzung können zusätzliche Kosten nach Anthropic-Abrechnung entstehen. Inhalte werden nur für die jeweilige KI-Anfrage an den Anbieter übertragen.",
+  },
+  {
+    question: "Kann ich ohne KI-Anbindung arbeiten?",
+    answer:
+      "Ja. Du kannst deine Bibliothek lokal nutzen und Prompts manuell strukturieren, speichern, suchen, favorisieren und per JSON sichern. Die KI-Optimierung ist eine zusätzliche Funktion, wenn du einen eigenen Anthropic API-Key hinterlegst.",
   },
   {
     question: "Gibt es eine kostenlose Testphase?",
@@ -184,16 +199,6 @@ const faqs = [
     question: "Wie funktioniert die Lizenz?",
     answer:
       "Du erhältst eine Jahreslizenz für 12 Monate. Sie verlängert sich automatisch um weitere 12 Monate, sofern sie nicht spätestens 1 Monat vor Ablauf gekündigt wird.",
-  },
-  {
-    question: "Kann ich Prompts strukturiert aufbauen?",
-    answer:
-      "Ja. Prompts können mit Rolle, Ziel, Kontext, Aufgabe, Ausgabeformat und Qualitätsanforderungen aufgebaut werden. Zusätzlich kannst du zwischen einer kompakten Variante und einer vollständigen Premium-Struktur für anspruchsvollere Aufgaben arbeiten.",
-  },
-  {
-    question: "Kann ich ohne KI-Anbindung arbeiten?",
-    answer:
-      "Ja. Du kannst deine Bibliothek lokal nutzen und Prompts manuell strukturieren, speichern, suchen, favorisieren und per JSON sichern. Die KI-Optimierung ist eine zusätzliche Funktion, wenn du einen eigenen Anthropic API-Key hinterlegst.",
   },
 ];
 
@@ -501,7 +506,7 @@ function FAQ() {
             <details className="group rounded-lg border border-ink/10 bg-white/80 p-5 shadow-sm" key={item.question}>
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
                 <span>{item.question}</span>
-                <HelpCircle className="h-5 w-5 shrink-0 text-blue transition group-open:rotate-45" />
+                <Plus className="h-5 w-5 shrink-0 text-blue transition group-open:rotate-45" />
               </summary>
               <p className="mt-4 leading-7 text-graphite/72">{item.answer}</p>
             </details>
