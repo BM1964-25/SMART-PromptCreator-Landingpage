@@ -295,7 +295,7 @@ function Hero() {
 
 function Problem() {
   return (
-    <section className="section bg-[#f7f3ec]">
+    <section className="section bg-[#f8f6f1]">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <p className="eyebrow">Problem und Nutzen</p>
@@ -343,7 +343,7 @@ function FeatureGrid() {
 
 function FullView() {
   return (
-    <section className="section bg-[#f5f1e8]">
+    <section className="section bg-[#f8f6f1]">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
           <div>
@@ -382,7 +382,7 @@ function FullView() {
 
 function LocalWorkspace() {
   return (
-    <section id="local" className="section bg-[#edf6f2]">
+    <section id="local" className="section bg-[#eef4ff]">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <div>
           <p className="eyebrow">Nutzung und eigener Arbeitsbereich</p>
@@ -491,7 +491,7 @@ function License() {
 
 function UseCases() {
   return (
-    <section className="section bg-[#f3f6fb]">
+    <section className="section bg-[#eef4ff]">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <p className="eyebrow">Einsatzbereiche</p>
