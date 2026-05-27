@@ -1,0 +1,74 @@
+# SMART PromptCreator
+
+App-Name: SMART PromptCreator
+Kurzbeschreibung: Lokale browserbasierte Prompt-Bibliothek und Prompt-Werkstatt fuer professionelle KI-Arbeit. Die App hilft dabei, Prompts strukturiert zu erfassen, gezielt zu verbessern, Varianten zu vergleichen und erfolgreiche Prompts dauerhaft wiederzuverwenden.
+Kategorie: Produktivitaets-App, Prompt-Bibliothek, Prompt-Werkstatt, KI-Arbeitswerkzeug
+Zielgruppe: Selbststaendige, Privatpersonen, Berater, Agenturen, Marketing-Teams, Entwickler und Unternehmen mit wiederkehrender KI-Arbeit
+Hauptnutzen: Mehr Struktur, bessere Prompt-Qualitaet und weniger Zeitverlust bei wiederkehrender KI-Arbeit. Gute Prompts werden nicht in Chatverlaeufen oder Notizen verloren, sondern lokal gesammelt, verschlagwortet und weiterentwickelt.
+
+Zentrale Funktionen:
+- Lokale Prompt-Bibliothek
+- Prompt-Werkstatt mit Rolle, Ziel, Kontext, Aufgabe, Ausgabeformat und Qualitaetsanforderungen
+- Kompakt- und Premium-Varianten
+- Variantenvergleich mit Uebernahme der passenden Ausgabe
+- Arbeitsbereiche, Kategorien, Tags, Favoriten und Suche
+- Duplizieren, Weiterentwickeln und Wiederverwenden erfolgreicher Prompts
+- JSON-Export und JSON-Import fuer Backups und Uebertragung
+
+KI-Funktionen:
+- Prompt-Optimierung
+- Variantenbildung
+- Vorschlaege fuer Titel, Beschreibung, Kategorie und Tags
+- Lokale Regeloptimierung ohne externe API
+- Optionale Anthropic-Anbindung mit eigenem Anthropic API-Key
+- Ein normales Claude-Abo ersetzt keinen Anthropic API-Key fuer API-Funktionen
+
+Nutzungsmodell:
+- Einzelplatzanwendung
+- Die App wird ueber einen mitgelieferten Starter lokal geoeffnet und im Browser angezeigt
+- Browserbasierte Nutzung auf dem eigenen Geraet
+- Fuer Testphase, Kauf und Lizenzpruefung kann ein Nutzerkonto erforderlich sein
+- Keine gemeinsamen Cloud-Arbeitsbereiche
+
+Speicherlogik:
+- Inhalte werden lokal auf dem Geraet bzw. im lokalen Browser-Speicher gespeichert
+- Keine automatische zentrale Cloud-Datenbank
+- Keine automatische Synchronisierung zwischen Nutzern
+- Andere Nutzer greifen nicht auf dieselben lokalen Daten zu
+- Export und Import erfolgen ueber JSON
+
+Lizenzmodell:
+- Professional Jahreslizenz
+- Preis: 99 EUR netto pro Jahr zzgl. 19 Prozent MwSt.
+- Brutto: 117,81 EUR inkl. MwSt.
+- Laufzeit: 12 Monate
+- Automatische Verlaengerung um weitere 12 Monate
+- Kuendigungsfrist: 1 Monat vor Ablauf
+- 3 Tage Testphase, sofern aktiviert
+- Pro Lizenz ein persoenlicher Nutzerzugriff
+- Mehrere Lizenzen moeglich
+
+Plattformen:
+- Windows
+- macOS
+- Lokale Anzeige im Browser
+
+Kauf- und Kontaktlink:
+- https://bm1964-25.github.io/Landing-Tafel-Kontakt/
+
+Landingpage:
+- https://bm1964-25.github.io/SMART-PromptCreator-Landingpage/
+
+Rechtliche Links:
+- Impressum: https://www.built-smart-hub.com/impressum
+- Datenschutz: https://www.built-smart-hub.com/datenschutz
+- AGB: https://www.built-smart-hub.com/agb
+- Widerrufsbelehrung: https://www.built-smart-hub.com/widerrufsbelehrung
+
+Wichtige Einschraenkungen:
+- Einzelplatzanwendung
+- Keine gemeinsame Cloud-Datenbank
+- Keine automatische Synchronisierung zwischen Nutzern
+- Lokale Inhalte muessen bei Bedarf per JSON exportiert und importiert werden
+- Fuer KI-Funktionen kann ein eigener Anthropic API-Key erforderlich sein
+- API-Nutzung kann zusaetzliche Kosten nach Anthropic-Abrechnung verursachen

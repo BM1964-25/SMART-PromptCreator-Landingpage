@@ -224,7 +224,11 @@ function Hero() {
   return (
     <section id="top" className="relative min-h-[680px] overflow-hidden border-b border-ink/10 bg-[#07110f] text-white">
       <div className="absolute inset-0">
-        <img src={heroScreenshotUrl} alt="" className="h-full w-full object-cover object-left-top opacity-72" />
+        <img
+          src={heroScreenshotUrl}
+          alt="SMART PromptCreator Oberfläche mit Prompt-Bibliothek, Prompt-Werkstatt und Variantenvergleich"
+          className="h-full w-full object-cover object-left-top opacity-72"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-[#03100d] via-[#07110f]/88 to-[#07110f]/18" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#03100d]/95 via-[#03100d]/68 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#03100d]/74 via-transparent to-[#03100d]/20" />
@@ -232,7 +236,7 @@ function Hero() {
       <div className="relative border-b border-ink/10 bg-[#f8f6f1]/95 shadow-[0_18px_60px_rgba(2,8,19,0.18)] backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8">
           <a href="#top" className="flex items-center gap-3 font-semibold tracking-normal text-ink">
-            <img src={logoUrl} alt="" className="h-9 w-9 rounded-lg shadow-sm" />
+            <img src={logoUrl} alt="SMART PromptCreator App-Icon" className="h-9 w-9 rounded-lg shadow-sm" />
             <span>SMART PromptCreator</span>
           </a>
           <nav className="hidden items-center gap-7 text-sm text-graphite/70 md:flex">
@@ -565,7 +569,7 @@ function Footer() {
     <footer className="border-t border-ink/10 bg-[#f8f6f1]">
       <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 text-center sm:px-6 md:grid-cols-[1fr_auto] md:items-center md:text-left lg:px-8">
         <div className="flex flex-col items-center gap-3 md:flex-row md:justify-start">
-          <img src={logoUrl} alt="" className="h-11 w-11 rounded-lg shadow-sm" />
+          <img src={logoUrl} alt="SMART PromptCreator App-Icon" className="h-11 w-11 rounded-lg shadow-sm" />
           <div>
             <p className="font-semibold">SMART PromptCreator</p>
             <p className="mt-1 text-sm text-graphite/62">Professionelle Prompt-Bibliothek für klare KI-Arbeit.</p>

@@ -8,7 +8,7 @@
     "dev": "cp index.source.html index.html && vite --host 127.0.0.1",
     "build": "cp index.source.html index.html && tsc -p tsconfig.json --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "publish:root": "npm run build && mkdir -p assets && cp dist/index.html index.html && cp dist/app-logo.png app-logo.png && cp dist/hero-app-screenshot.png hero-app-screenshot.png && cp dist/hero-promptcreator-workbench.png hero-promptcreator-workbench.png && cp dist/hero-promptcreator-original.png hero-promptcreator-original.png && cp dist/hero-promptcreator-current.png hero-promptcreator-current.png && cp dist/app-full-view.png app-full-view.png && cp dist/assets/* assets/"
+    "publish:root": "npm run build && mkdir -p assets && cp dist/index.html index.html && cp dist/app-logo.png app-logo.png && cp dist/hero-app-screenshot.png hero-app-screenshot.png && cp dist/hero-promptcreator-workbench.png hero-promptcreator-workbench.png && cp dist/hero-promptcreator-original.png hero-promptcreator-original.png && cp dist/hero-promptcreator-current.png hero-promptcreator-current.png && cp dist/app-full-view.png app-full-view.png && cp dist/robots.txt robots.txt && cp dist/sitemap.xml sitemap.xml && cp dist/llms.txt llms.txt && cp dist/assets/* assets/"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
