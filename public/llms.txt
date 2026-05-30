@@ -44,7 +44,7 @@ Lizenzmodell:
 - Laufzeit: 12 Monate
 - Automatische Verlaengerung um weitere 12 Monate
 - Kuendigungsfrist: 1 Monat vor Ablauf
-- 3 Tage Testphase, sofern aktiviert
+- 3 Tage Free Trial mit 5 kostenlosen KI-Anfragen, sofern aktiviert
 - Pro Lizenz ein persoenlicher Nutzerzugriff
 - Mehrere Lizenzen moeglich
 
@@ -72,3 +72,5 @@ Wichtige Einschraenkungen:
 - Lokale Inhalte muessen bei Bedarf per JSON exportiert und importiert werden
 - Fuer KI-Funktionen kann ein eigener Anthropic API-Key erforderlich sein
 - API-Nutzung kann zusaetzliche Kosten nach Anthropic-Abrechnung verursachen
+- Bei Nutzung ueber die Anthropic API werden Inhalte nur zur jeweiligen KI-Anfrage uebertragen
+- Nach Anthropic-Angaben werden Daten aus kommerziellen Produkten wie der Anthropic API nicht zum Training generativer Modelle verwendet, sofern der Kunde nicht ausdruecklich einer Nutzung zur Modellverbesserung zustimmt

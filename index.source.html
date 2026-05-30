@@ -86,7 +86,7 @@
                 "billingDuration": "P1Y",
                 "valueAddedTaxIncluded": false
               },
-              "description": "Professional Jahreslizenz für 12 Monate, automatische Verlängerung um weitere 12 Monate, Kündigungsfrist 1 Monat vor Ablauf, zzgl. 19 % MwSt., persönlicher Nutzerzugriff, 3 Tage Testphase sofern aktiviert."
+              "description": "Professional Jahreslizenz für 12 Monate, automatische Verlängerung um weitere 12 Monate, Kündigungsfrist 1 Monat vor Ablauf, zzgl. 19 % MwSt., persönlicher Nutzerzugriff, 3 Tage Free Trial mit 5 kostenlosen KI-Anfragen sofern aktiviert."
             },
             "provider": {
               "@id": "https://www.built-smart-hub.com/#organization"
@@ -203,7 +203,15 @@
                 "name": "Gibt es eine kostenlose Testphase?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Ja, sofern dieses Modell aktiviert ist. Die App kann dann für einen begrenzten Zeitraum mit vollem Funktionsumfang getestet werden."
+                  "text": "Ja, sofern dieses Modell aktiviert ist. Vorgesehen sind 3 Tage Free Trial mit 5 kostenlosen KI-Anfragen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Werden meine Dokumente für KI-Training verwendet?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Bei Nutzung über die Anthropic API werden deine Inhalte nur zur jeweiligen KI-Anfrage übertragen. Nach Anthropic-Angaben werden Daten aus kommerziellen Produkten wie der Anthropic API nicht zum Training generativer Modelle verwendet, sofern der Kunde nicht ausdrücklich einer Nutzung zur Modellverbesserung zustimmt. Das unterscheidet sich von privaten Chat-Oberflächen, deren Datenschutz- und Trainingsoptionen separat geregelt sein können."
                 }
               },
               {

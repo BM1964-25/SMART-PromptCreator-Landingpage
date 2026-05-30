@@ -120,7 +120,7 @@ const useCases = [
 
 const licenseBadges = [
   "12 Monate Laufzeit",
-  "3 Tage testen",
+  "3 Tage Free Trial",
   "1 Nutzerzugriff",
 ];
 
@@ -189,7 +189,12 @@ const faqs = [
   {
     question: "Gibt es eine kostenlose Testphase?",
     answer:
-      "Ja, sofern dieses Modell aktiviert ist. Die App kann dann für einen begrenzten Zeitraum mit vollem Funktionsumfang getestet werden.",
+      "Ja, sofern dieses Modell aktiviert ist. Vorgesehen sind 3 Tage Free Trial mit 5 kostenlosen KI-Anfragen.",
+  },
+  {
+    question: "Werden meine Dokumente für KI-Training verwendet?",
+    answer:
+      "Bei Nutzung über die Anthropic API werden deine Inhalte nur zur jeweiligen KI-Anfrage übertragen. Nach Anthropic-Angaben werden Daten aus kommerziellen Produkten wie der Anthropic API nicht zum Training generativer Modelle verwendet, sofern der Kunde nicht ausdrücklich einer Nutzung zur Modellverbesserung zustimmt. Das unterscheidet sich von privaten Chat-Oberflächen, deren Datenschutz- und Trainingsoptionen separat geregelt sein können.",
   },
   {
     question: "Brauche ich ein Nutzerkonto?",
